@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import noteContext from '../context/Createcontext'
+import env from "react-dotenv";
+
 
 const Note = (props) => {
   // for login status
@@ -19,8 +21,9 @@ const Note = (props) => {
   }, [msg])
 
 
-  const [tasks, setTasks] = useState([])
-  const host = "http://127.0.0.1"
+  const [tasks, setTasks] = useState([]);
+
+  const host =env.BASE_URL;
 
   const noBodyReq = async (route, method) => {
     let url = `${host + route}`;

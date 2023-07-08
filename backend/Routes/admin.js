@@ -8,7 +8,6 @@ const { check, validationResult } = require('express-validator');
 
 const jwt=require("jsonwebtoken");
 
-const express=require('express');
 require("dotenv").config();
 const JWT_Sec_key=process.env.ADMIN_KEY;
 
