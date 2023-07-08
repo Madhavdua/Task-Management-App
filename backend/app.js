@@ -1,8 +1,12 @@
 const dbConnect=require('./db')
-dbConnect("mongodb://localhost:27017/Task_Manager_Db")
+
+const URI="mongodb+srv://madhavdua26:QysDook9QVf0BL1K@cluster0.nabpasu.mongodb.net/?retryWrites=true&w=majority"
+dbConnect(URI);
+// dbConnect("mongodb://localhost:27017/Task_Manager_Db")
 
 const express=require('express');
-const port=80;
+require("dotenv").config();
+const port=process.env.PORT;
 const app=express();
 
 // to avoid cors error

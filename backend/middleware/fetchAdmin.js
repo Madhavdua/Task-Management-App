@@ -1,5 +1,7 @@
 const jwt=require("jsonwebtoken");
-const JWT_Sec_key="IamAdmin";
+const express=require('express');
+require("dotenv").config();
+const JWT_Sec_key=process.env.ADMIN_KEY;
 
 const fetchAdmin=async(req,res,next)=>{
     const token=req.header('auth-token');

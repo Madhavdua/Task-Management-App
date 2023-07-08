@@ -2,10 +2,9 @@ const express=require("express");
 const router=express.Router();
 
 const User=require("../Schema/UserSchema")
-
-// const dotenv = require('dotenv');
+require("dotenv").config();
+const JWT_Sec_key = process.env.USER_KEY;
 const jwt = require('jsonwebtoken');
-const JWT_Sec_key = 'MadhavDua';
 
 const bcrypt = require("bcrypt");
 const { check, validationResult } = require('express-validator');

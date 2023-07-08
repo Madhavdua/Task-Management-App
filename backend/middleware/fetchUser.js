@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
-const JWT_Sec_key = 'MadhavDua';
+const express=require('express');
+require("dotenv").config();
+const JWT_Sec_key = process.env.USER_KEY;
 
 const fetchUser=(req,res,next)=>{
     let token =req.header('auth-token');

@@ -7,7 +7,10 @@ const bcrypt = require("bcrypt");
 const { check, validationResult } = require('express-validator');
 
 const jwt=require("jsonwebtoken");
-const JWT_Sec_key="IamAdmin"
+
+const express=require('express');
+require("dotenv").config();
+const JWT_Sec_key=process.env.ADMIN_KEY;
 
 router.post('/createadmin',
 check("name").isLength({min:3}),
