@@ -6,7 +6,7 @@ dbConnect(URI);
 
 const express=require('express');
 require("dotenv").config();
-const port=process.env.PORT;
+const port=process.env.PORT||80;
 const app=express();
 
 // to avoid cors error
