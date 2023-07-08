@@ -28,4 +28,5 @@ app.use('/api/admin',require('./Routes/admin'));
 
 app.listen(port,()=>{
     console.log('app started successfully at',port);
+    console.log('my env variable admin',process.env.ADMIN_KEY)
 })
