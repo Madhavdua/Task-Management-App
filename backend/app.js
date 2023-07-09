@@ -1,12 +1,12 @@
 const dbConnect=require('./db')
 
-const URI="mongodb+srv://madhavdua26:QysDook9QVf0BL1K@cluster0.nabpasu.mongodb.net/?retryWrites=true&w=majority"
-dbConnect(URI);
-// dbConnect("mongodb://localhost:27017/Task_Manager_Db")
+const dbURI=process.env.URI||("mongodb://localhost:27017/Task_Manager_Db");
+dbConnect(dbURI);
+// dbConnect()
 
 const express=require('express');
 require("dotenv").config();
-const port=process.env.PORT;
+const port=process.env.PORT||80;
 const app=express();
 
 // to avoid cors error
@@ -27,5 +27,6 @@ app.use('/api/task',require('./Routes/task'));
 app.use('/api/admin',require('./Routes/admin'));
 
 app.listen(port,()=>{
-    console.log('app started successfully')
+    console.log('app started successfully at',port);
+    console.log('my env variable admin',process.env.ADMIN_KEY)
 })
