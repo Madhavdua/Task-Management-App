@@ -1,8 +1,8 @@
 const dbConnect=require('./db')
 
-const URI="mongodb+srv://madhavdua26:QysDook9QVf0BL1K@cluster0.nabpasu.mongodb.net/?retryWrites=true&w=majority"
-dbConnect(URI);
-// dbConnect("mongodb://localhost:27017/Task_Manager_Db")
+const dbURI=process.env.URI||("mongodb://localhost:27017/Task_Manager_Db");
+dbConnect(dbURI);
+// dbConnect()
 
 const express=require('express');
 require("dotenv").config();
